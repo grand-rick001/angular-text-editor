@@ -1,0 +1,19 @@
+<h1>HELLO WORLD!!</h1>
+
+<!-- <ckeditor [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor> -->
+<!-- <rich-text-editor></rich-text-editor> -->
+
+<form action="" [formGroup]="sampleForm" (ngSubmit)="logData()">
+  <input type="text" name="title" id="title" formControlName="title" />
+  <rich-text-editor
+    [control]="sampleForm.controls.editor"
+    formControlName="editor"
+  ></rich-text-editor>
+  <input type="submit" value="Submit" id="submit" />
+</form>
+
+@if (textData) {
+<div [innerHTML]="textData"></div>
+}
+
+<router-outlet></router-outlet>
